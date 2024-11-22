@@ -18,8 +18,6 @@ const NewHeader = () => {
   const pathanme = usePathname();
   console.log(pathanme, "pathname");
 
-  const isBlogSlugPage = pathanme.startsWith("/blogs/");
-
   const handleCloseDiv = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
       setShowSearch(false);
@@ -61,11 +59,7 @@ const NewHeader = () => {
 
   return (
     <header
-      className={`${headerClass} px-5 lg:px-20 h-[8svh] flex items-center justify-between transition-transform duration-300 ${
-        isBlogSlugPage
-          ? "shadow-md"
-          : "shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]"
-      }`}
+      className={`${headerClass} px-5 lg:px-20 h-[8svh] flex items-center justify-between transition-transform duration-300 ${"shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]"}`}
     >
       <Menu
         showCatMenu={showCatMenu}

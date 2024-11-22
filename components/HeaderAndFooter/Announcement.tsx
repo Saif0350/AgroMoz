@@ -19,8 +19,6 @@ const Announcement = () => {
   const pathanme = usePathname();
   console.log(pathanme, "pathname");
 
-  const isBlogSlugPage = pathanme.startsWith("/blogs/");
-
   useEffect(() => {
     const handleScroll = () => {
       // Check if the scroll position is greater than 50px
@@ -44,9 +42,7 @@ const Announcement = () => {
     >
       <div
         className={`flex fixed top-0 left-10 z-[100] w-auto py-6 px-6 bg-white rounded-b-full ${
-          isBlogSlugPage || isScrolled
-            ? "shadow-md"
-            : "shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]"
+          isScrolled ? "shadow-md" : "shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]"
         }`}
       >
         <Link href={"/"}>
